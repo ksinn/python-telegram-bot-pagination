@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='python-telegram-bot-pagination',
-    version='0.0.2',
+    version='0.0.1',
     packages=['telegram_bot_pagination'],
     url='https://github.com/ksinn/python-telegram-bot-pagination',
     license='GPL2',
