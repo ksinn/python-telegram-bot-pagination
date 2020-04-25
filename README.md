@@ -15,7 +15,7 @@ Provide easy way for create number pagination with inline keyboard for telegram 
     pip install python-telegram-bot-pagination
 
 #### Usage
-        from telegram-bot-pagination import InlineKeyboardPaginator
+        from telegram_bot_pagination import InlineKeyboardPaginator
 
         paginator = InlineKeyboardPaginator(
             page_count,

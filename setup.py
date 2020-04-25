@@ -5,8 +5,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name='python-telegram-bot-pagination1',
-    version='0.0.1',
+    name='python-telegram-bot-pagination',
+    version='0.0.2',
     packages=['telegram_bot_pagination'],
     url='https://github.com/ksinn/python-telegram-bot-pagination',
     license='GPL2',

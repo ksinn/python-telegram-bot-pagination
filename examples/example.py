@@ -48,7 +48,7 @@ def send_character_page(message, page=1):
     bot.send_message(
         message.chat.id,
         character_pages[page-1],
-        reply_markup=paginator.keyboard,
+        reply_markup=paginator.markup,
         parse_mode='Markdown'
     )
 
