@@ -8,7 +8,7 @@ setup(
     name='python-telegram-bot-pagination1',
     version='0.0.1',
     packages=['telegram_bot_pagination'],
-    url='https://github.com/ksinn/pyTelegramBotPagination',
+    url='https://github.com/ksinn/python-telegram-bot-pagination',
     license='GPL2',
     author='ksinn',
     author_email='ksinnd@gmail.com',

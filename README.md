@@ -1,15 +1,15 @@
 # python-telegram-bot-pagination
 
-![](https://travis-ci.org/ksinn/pyTelegramBotPagination.svg?branch=master)
+![](https://travis-ci.org/ksinn/python-telegram-bot-pagination.svg?branch=master)
 
 Provide easy way for create number pagination with inline keyboard for telegram bot on python.
 
 
 #
 
-[Simple example](https://github.com/ksinn/pyTelegramBotPagination/blob/master/examples/example.py)
+[Simple example](https://github.com/ksinn/python-telegram-bot-pagination/blob/master/examples/example.py)
 
-![](https://github.com/ksinn/pyTelegramBotPagination/raw/master/examples/media/3.jpg) ![](https://github.com/ksinn/pyTelegramBotPagination/raw/master/examples/media/f1.jpg)
+![](https://github.com/ksinn/python-telegram-bot-pagination/raw/master/examples/media/3.jpg) ![](https://github.com/ksinn/pyTelegramBotPagination/raw/master/examples/media/f1.jpg)
 
 #### Installation
 
@@ -64,7 +64,7 @@ For example:
 
 Result:
 
-![](https://github.com/ksinn/pyTelegramBotPagination/raw/master/examples/media/m2.jpg)
+![](https://github.com/ksinn/python-telegram-bot-pagination/raw/master/examples/media/m2.jpg)
 
 
 
