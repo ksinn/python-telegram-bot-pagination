@@ -1,5 +1,6 @@
 # python-telegram-bot-pagination
 
+[![Download Month](https://img.shields.io/pypi/v/python-telegram-bot-pagination.svg)](https://pypi.python.org/pypi/python-telegram-bot-pagination)
 [![Build Status](https://travis-ci.com/ksinn/python-telegram-bot-pagination.svg?branch=master)](https://travis-ci.com/ksinn/python-telegram-bot-pagination)
 
 Provide easy way for create number pagination with inline keyboard for telegram bot on python.
