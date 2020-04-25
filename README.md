@@ -4,7 +4,6 @@
 
 Provide easy way for create number pagination with inline keyboard for telegram bot on python.
 
-
 #
 
 [Simple example](https://github.com/ksinn/python-telegram-bot-pagination/blob/master/examples/example.py)
