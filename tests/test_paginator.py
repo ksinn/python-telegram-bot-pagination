@@ -3,7 +3,7 @@ import json
 import pytest
 
 from telegram_bot_pagination import InlineKeyboardPaginator
-from data import *
+from .data import *
 
 
 def test_button_label():
