@@ -116,14 +116,13 @@ class InlineKeyboardPaginator:
     @property
     def markup(self):
         """InlineKeyboardMarkup"""
-        keyboards = list(filter(
-            bool,
-            [
-                *self._keyboard_before,
-                self.keyboard,
-                *self._keyboard_after
-            ],
-        ))
+        keyboards = list()
+
+        keyboards.extend(self._keyboard_before)
+        keyboards.append(self.keyboard)
+        keyboards.extend(self._keyboard_after)
+
+        keyboards = list(filter(bool, keyboards))
 
         if not keyboards:
             return None
