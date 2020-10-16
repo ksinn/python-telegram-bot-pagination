@@ -9,7 +9,7 @@ Provide easy way for create number pagination with inline keyboard for telegram 
 
 [Example](https://github.com/ksinn/python-telegram-bot-pagination/blob/master/examples/example2.py) with [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot)
 
-![](https://github.com/ksinn/python-telegram-bot-pagination/raw/master/examples/media/ex1.png)
+![](https://github.com/ksinn/python-telegram-bot-pagination/raw/master/examples/media/ex1.png)  ![](https://github.com/ksinn/python-telegram-bot-pagination/raw/master/examples/media/f1.jpg)
 
 * [Installation.](#installation)
 * [Usage.](#usage)
