@@ -89,7 +89,7 @@ For example:
 
 Result:
 
-![](https://github.com/ksinn/python-telegram-bot-pagination/raw/master/examples/media/ex1.jpg)
+![](https://github.com/ksinn/python-telegram-bot-pagination/raw/master/examples/media/ex1.png)
 
 
 

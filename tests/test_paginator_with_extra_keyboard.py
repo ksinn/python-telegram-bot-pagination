@@ -42,7 +42,7 @@ def test_json_markup_with_before():
 
         for button, label in zip(keyboard[1], labels):
             assert button['text'] == label, \
-                'In case init args {} button label not correct. Must be {}'.format(args, label)
+                'In case init args {} button label not correct'.format(args)
 
 
 def test_json_markup_with_after():
@@ -62,7 +62,7 @@ def test_json_markup_with_after():
 
         for button, label in zip(keyboard[0], labels):
             assert button['text'] == label, \
-                'In case init args {} button label not correct. Must be {}'.format(args, label)
+                'In case init args {} button label not correct'.format(args)
 
         _verify_extra_buttons(keyboard[1])
 
@@ -89,7 +89,7 @@ def test_json_markup_with_before_after():
 
         for button, label in zip(keyboard[1], labels):
             assert button['text'] == label, \
-                'In case init args {} button label not correct. Must be {}'.format(args, label)
+                'In case init args {} button label not correct'.format(args)
 
         _verify_extra_buttons(keyboard[2])
 
