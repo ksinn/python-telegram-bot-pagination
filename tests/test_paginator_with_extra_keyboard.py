@@ -129,10 +129,3 @@ def test_one_page_keyboard_json_markup_with_before_and_after():
 
         _verify_extra_buttons(keyboard[0])
         _verify_extra_buttons(keyboard[1])
-
-
-
-
-
-
-
