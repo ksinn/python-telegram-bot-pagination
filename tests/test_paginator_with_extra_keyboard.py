@@ -30,7 +30,7 @@ def test_json_markup_with_before():
         paginator.add_before(
             *extra_buttons
         )
-        keyboard = json.loads(paginator.markup.encode('utf-8'))['inline_keyboard']
+        keyboard = json.loads(paginator.markup, encoding='utf-8')['inline_keyboard']
 
         _verify_extra_buttons(keyboard[0])
 
@@ -51,7 +51,7 @@ def test_json_markup_with_after():
         paginator.add_after(
             *extra_buttons
         )
-        keyboard = json.loads(paginator.markup.encode('utf-8'))['inline_keyboard']
+        keyboard = json.loads(paginator.markup, encoding='utf-8')['inline_keyboard']
 
         if not labels:
             _verify_extra_buttons(keyboard[0])
@@ -76,7 +76,7 @@ def test_json_markup_with_before_after():
         paginator.add_after(
             *extra_buttons
         )
-        keyboard = json.loads(paginator.markup.encode('utf-8'))['inline_keyboard']
+        keyboard = json.loads(paginator.markup, encoding='utf-8')['inline_keyboard']
 
         _verify_extra_buttons(keyboard[0])
 
