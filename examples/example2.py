@@ -3,6 +3,7 @@
 import os
 import logging
 
+from telegram import InlineKeyboardButton
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
 from telegram_bot_pagination import InlineKeyboardPaginator
 
@@ -40,6 +41,12 @@ def characters_page_callback(update, context):
         current_page=page,
         data_pattern='character#{page}'
     )
+
+    paginator.add_before(
+        InlineKeyboardButton('Like', callback_data='like#{}'.format(page)),
+        InlineKeyboardButton('Dislike', callback_data='dislike#{}'.format(page))
+    )
+    paginator.add_after(InlineKeyboardButton('Go back', callback_data='back'))
 
     query.edit_message_text(
         text=character_pages[page - 1],
