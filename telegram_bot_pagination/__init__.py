@@ -141,7 +141,7 @@ class InlineKeyboardPaginator:
         Add buttons as line above pagination buttons.
 
         Args:
-            inline_buttons (:object:`iterable`): List of object with attributes 'text' and 'callback_data'.
+            inline_buttons (:object:`iterable`): List of object with attributes `text` and `callback_data`.
 
         Returns:
             None
