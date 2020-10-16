@@ -5,13 +5,16 @@
 
 Provide easy way for create number pagination with inline keyboard for telegram bot on python.
 
-#
-
 [Example](https://github.com/ksinn/python-telegram-bot-pagination/blob/master/examples/example.py) with [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI)
 
 [Example](https://github.com/ksinn/python-telegram-bot-pagination/blob/master/examples/example2.py) with [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot)
 
 ![](https://github.com/ksinn/python-telegram-bot-pagination/raw/master/examples/media/3.jpg) ![](https://github.com/ksinn/python-telegram-bot-pagination/raw/master/examples/media/f1.jpg)
+
+* [Installation.](#installation)
+* [Usage.](#usage)
+* [Button render controlling.](#button-render-controlling)
+* [Adding extra button.](#adding-extra-button)
 
 #### Installation
 
@@ -42,7 +45,7 @@ Properties:
 * markup - json object for [InlineKeyboardMarkup](https://core.telegram.org/bots/api#inlinekeyboardmarkup) TelegramAPI type
 * keyboard - array of button's dist 
 
-#### Button render controlling:
+#### Button render controlling
 For edit button render, use paginator object properties:
 
 * first_page_label
@@ -67,6 +70,26 @@ For example:
 Result:
 
 ![](https://github.com/ksinn/python-telegram-bot-pagination/raw/master/examples/media/m2.jpg)
+
+#### Adding extra button
+For adding button line before and after pagination use methods:
+
+* add_before(*args)
+* add_after(*args)
+
+Each argument mast provide property 'text' and 'callback_data'
+
+For example:
+
+    paginator.add_before(
+        InlineKeyboardButton('Like', callback_data='like#{}'.format(page)),
+        InlineKeyboardButton('Dislike', callback_data='dislike#{}'.format(page))
+    )
+    paginator.add_after(InlineKeyboardButton('Go back', callback_data='back'))
+
+Result:
+
+![](https://github.com/ksinn/python-telegram-bot-pagination/raw/master/examples/media/ex1.jpg)
 
 
 

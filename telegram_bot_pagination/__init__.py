@@ -7,8 +7,9 @@ InlineKeyboardButton = namedtuple('InlineKeyboardButton', ['text', 'callback_dat
 
 class InlineKeyboardPaginator:
     _keyboard_before = None
-    _keyboard_after = None
     _keyboard = None
+    _keyboard_after = None
+
     first_page_label = '« {}'
     previous_page_label = '‹ {}'
     next_page_label = '{} ›'
