@@ -162,8 +162,8 @@ class InlineKeyboardSimplePaginator:
     _keyboard = None
     _keyboard_after = None
 
-    previous_page_label = '‹ {}'
-    next_page_label = '{} ›'
+    previous_page_label = '‹‹'
+    next_page_label = '››'
     current_page_label = '{}'
 
     def __init__(self, page_count, current_page=1, data_pattern='{page}'):
@@ -191,16 +191,16 @@ class InlineKeyboardSimplePaginator:
         keyboard_dict = dict()
 
         if self.current_page - 1 < 1:
-            keyboard_dict[self.page_count] = self.previous_page_label.format("prev")
+            keyboard_dict[self.page_count] = self.previous_page_label
         else:
-            keyboard_dict[self.current_page-1] = self.previous_page_label.format("prev")
+            keyboard_dict[self.current_page-1] = self.previous_page_label
 
         keyboard_dict[self.current_page] = self.current_page_label.format(f"{self.current_page}/{self.page_count}")
 
         if self.current_page + 1 > self.page_count:
-            keyboard_dict[1] = self.next_page_label.format("next")
+            keyboard_dict[1] = self.next_page_label
         else:
-            keyboard_dict[self.current_page+1] = self.next_page_label.format("next")
+            keyboard_dict[self.current_page+1] = self.next_page_label
 
         return keyboard_dict
 
