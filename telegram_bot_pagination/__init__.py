@@ -163,10 +163,24 @@ class InlineKeyboardPaginator:
 
 def _buttons_to_dict(buttons):
     return [
-        {
-            'text': button.text,
-            'callback_data': button.callback_data,
-        }
+        # {
+        #     'text': button.text,
+        #     'callback_data': button.callback_data,
+        # }
+        button_to_dict(button)
         for button
         in buttons
     ]
+
+
+def button_to_dict(button):
+    if button.url:
+        key = 'url'
+        keydata = button.url
+    if button.callback_data:
+        key = 'callback_data'
+        keydata = button.callback_data
+    return {
+        'text': button.text,
+        key: keydata
+    }
