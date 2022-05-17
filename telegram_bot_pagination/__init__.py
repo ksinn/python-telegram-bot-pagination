@@ -165,7 +165,7 @@ def _buttons_to_dict(buttons):
     return [
         {
             'text': button.text,
-            'callback_data': button.callback_data,
+            'callback_data': button.callback_data or button.url,
         }
         for button
         in buttons
