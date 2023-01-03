@@ -34,15 +34,15 @@ async def send_character_page(msg, page=1):
     )
 
 
-async def characters_page_callback(msg: CallbackQuery):
-    bot: Bot = msg.bot
+async def characters_page_callback(query: CallbackQuery):
+    bot: Bot = query.bot
 
     page = int(msg.data.split('#')[1])
     await bot.delete_message(
-        msg.message.chat.id,
-        msg.message.message_id
+        query.message.chat.id,
+        query.message.message_id
     )
-    await send_character_page(msg.message, page)
+    await send_character_page(query.message, page)
 
 
 async def get_character(msg: Message):
