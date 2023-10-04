@@ -20,15 +20,14 @@ class InlineKeyboardPaginator:
         self._keyboard_before = list()
         self._keyboard_after = list()
 
-        if current_page is None or current_page < 1:
-            current_page = 1
-        if current_page > page_count:
-            current_page = page_count
         self.current_page = current_page
-
         self.page_count = page_count
-
         self.data_pattern = data_pattern
+
+        if current_page is None or current_page < 1:
+            self.current_page = 1
+        if current_page > page_count:
+            self.current_page = page_count
 
     def _build(self):
         keyboard_dict = dict()
@@ -139,10 +138,8 @@ class InlineKeyboardPaginator:
     def add_before(self, *inline_buttons):
         """
         Add buttons as line above pagination buttons.
-
         Args:
             inline_buttons (:object:`iterable`): List of object with attributes `text` and `callback_data`.
-
         Returns:
             None
         """
@@ -151,14 +148,65 @@ class InlineKeyboardPaginator:
     def add_after(self, *inline_buttons):
         """
         Add buttons as line under pagination buttons.
-
         Args:
             inline_buttons (:object:`iterable`): List of object with attributes 'text' and 'callback_data'.
-
         Returns:
             None
         """
         self._keyboard_after.append(_buttons_to_dict(inline_buttons))
+
+
+class InlineKeyboardSimplePaginator(InlineKeyboardPaginator):
+    previous_page_label = '‹‹'
+    next_page_label = '››'
+    current_page_label = '{}/{}'
+
+    def __init__(self, page_count, current_page=1, data_pattern='{page}'):
+        super().__init__(page_count, current_page, data_pattern)
+
+        if current_page is None or current_page < 1:
+            self.current_page = page_count
+
+        if current_page > page_count:
+            self.current_page = 1
+
+    def _build(self):
+        if self.page_count == 1:
+            self._keyboard = list()
+        else:
+            keyboard_dict = self._build_keyboard()
+            self._keyboard = self._to_button_array(keyboard_dict)
+
+    def _build_keyboard(self):
+        keyboard_dict = dict()
+
+        if self.current_page - 1 < 1:
+            keyboard_dict[self.page_count] = self.previous_page_label
+        else:
+            keyboard_dict[self.current_page-1] = self.previous_page_label
+
+        keyboard_dict[self.current_page] = self.current_page_label.format(self.current_page, self.page_count)
+
+        if self.current_page + 1 > self.page_count:
+            keyboard_dict[1] = self.next_page_label
+        else:
+            keyboard_dict[self.current_page+1] = self.next_page_label
+
+        return keyboard_dict
+
+    def _to_button_array(self, keyboard_dict):
+        keyboard = list()
+
+        keys = list(keyboard_dict.keys())
+
+        for key in keys:
+            keyboard.append(
+                InlineKeyboardButton(
+                    text=str(keyboard_dict[key]),
+                    callback_data=self.data_pattern.format(page=key)
+                )
+            )
+        return _buttons_to_dict(keyboard)
 
 
 def _buttons_to_dict(buttons):
