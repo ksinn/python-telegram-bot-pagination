@@ -77,7 +77,7 @@ For adding button line before and after pagination use methods:
 * add_before(*args)
 * add_after(*args)
 
-Each argument mast provide property 'text' and 'callback_data'
+Each argument must provide property 'text' and 'callback_data'
 
 For example:
 
